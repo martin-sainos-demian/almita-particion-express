@@ -41,7 +41,7 @@ const part = function(name, desp, puest, age, net){
           error="MAL_PUESTO"
         }
       }else{
-        error="MAL_DSPACHO"
+        error="MAL_DESPACHO"
       }
     }else{
       error="MAL_NOMBRE"
