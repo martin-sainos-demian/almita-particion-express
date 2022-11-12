@@ -29,10 +29,15 @@ const part = function(name, desp, puest, age, net){
   var retencion=0
 
   var name_regex=/^[a-zA-Zñ\s]{4,255}$/
-  var desp_regex=/a|b\d\d\d/
+  var desp_regex=/a|b\d\d\d{4,4}/
 
   if(name!=""){
     if(name_regex.test(name)){
+      if(desp_regex.test(desp)){
+
+      }else{
+        error="MAL_DSPACHO"
+      }
     }else{
       error="MAL_NOMBRE"
     }
