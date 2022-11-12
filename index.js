@@ -30,11 +30,16 @@ const part = function(name, desp, puest, age, net){
 
   var name_regex=/^[a-zA-Zñ\s]{4,255}$/
   var desp_regex=/A|B\d\d\d{4,4}/
+  var puest_regex=/(JEFE_AREA)|(DIRECTOR_GENERAL)|(JEFE_PROYECTO)|(ANALISTA)|(PROGRAMADOR)/
 
   if(name!=""){
     if(name_regex.test(name)){
       if(desp_regex.test(desp)){
+        if(puest_regex.test(puest)){
 
+        }else{
+          error="MAL_PUESTO"
+        }
       }else{
         error="MAL_DSPACHO"
       }
