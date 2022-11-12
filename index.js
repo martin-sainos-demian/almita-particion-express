@@ -29,14 +29,23 @@ const part = function(name, desp, puest, age, net){
   var retencion=0
 
   var name_regex=/^[a-zA-Zñ\s]{4,255}$/
-  var desp_regex=/A|B\d\d\d{4,4}/
-  var puest_regex=/(JEFE_AREA)|(DIRECTOR_GENERAL)|(JEFE_PROYECTO)|(ANALISTA)|(PROGRAMADOR)/
+  var desp_regex=/^(A|B)\d\d\d{4,4}$/
+  var puest_regex=/^(JEFE_AREA)|(DIRECTOR_GENERAL)|(JEFE_PROYECTO)|(ANALISTA)|(PROGRAMADOR)&/
+  var sal = parseFloat(net)
 
   if(name!=""){
     if(name_regex.test(name)){
       if(desp_regex.test(desp)){
         if(puest_regex.test(puest)){
-
+          if(1000<sal&&sal<6000){
+            if(18<sal&&sal<67){
+              retencion=sal
+            }else{
+              error="MAL_EDAD"
+            }
+          }else{
+            error="MAL_SUELDO"
+          }
         }else{
           error="MAL_PUESTO"
         }
