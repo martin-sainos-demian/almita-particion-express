@@ -19,8 +19,11 @@ app.all("/", function (req, res, next) {
 
 //test
 app.get("/", async (req, res, next) => {
-  res.json({msg:"welcome :3"});});
-
+  res.json({msg:"welcome :3"});
+});
+app.get("/particion", async (req, res, next) => {
+  res.json({msg:"egg"});
+});
 //run this sheet
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
