@@ -28,8 +28,10 @@ const part = function(name, desp, puest, age, net){
   var error="ERROR_CONNECT_BD"
   var retencion=0
 
+  var name_only_chars=""
 
-  return {error:valid,
+
+  return {error:error,
     retencion:retencion}
 }
 
