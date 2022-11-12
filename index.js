@@ -29,7 +29,7 @@ const part = function(name, desp, puest, age, net){
   var retencion=0
 
   var name_regex=/^[a-zA-Zñ\s]{4,255}$/
-  var desp_regex=/a|b\d\d\d{4,4}/
+  var desp_regex=/A|B\d\d\d{4,4}/
 
   if(name!=""){
     if(name_regex.test(name)){
