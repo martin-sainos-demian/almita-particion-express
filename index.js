@@ -28,12 +28,11 @@ const part = function(name, desp, puest, age, net){
   var error="ERROR_CONNECT_BD"
   var retencion=0
 
-  var name_regex=/^[a-zñ\s]{4,255}$/
+  var name_regex=/^(a-zA-Zñ\s)+{4,255}$/
   var desp_regex=/a|b\d\d\d/
 
   if(name!=""){
     if(name_regex.test(name)){
-
     }else{
       error="MAL_NOMBRE"
     }
