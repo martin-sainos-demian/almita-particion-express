@@ -36,11 +36,11 @@ const part = function(name, desp, puest, age, net){
 }
 
 app.get("/particion", async (req, res, next) => {
-  var name=window.decodeURI(req.query.name)
-  var desp=window.decodeURI(req.query.desp)
-  var puest=window.decodeURI(req.query.puest)
-  var age=window.decodeURI(req.query.age)
-  var net=window.decodeURI(req.query.net)
+  var name=decodeURI(req.query.name)
+  var desp=decodeURI(req.query.desp)
+  var puest=decodeURI(req.query.puest)
+  var age=decodeURI(req.query.age)
+  var net=decodeURI(req.query.net)
 
   var resp = part(name, desp, puest, age, net)
 
