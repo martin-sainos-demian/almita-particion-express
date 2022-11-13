@@ -78,11 +78,11 @@ const ret=function(sal, puest, age){
   }
 
   if(puest=="JEFE_AREA"){
-    inc+=3.5
+    inc+=0.035
   }else if(puest=="DIRECTOR_GENERAL"){
-    inc+=3
+    inc+=0.03
   }else if(puest=="JEFE_PROYECTO"&&age>20){
-    inc+=2
+    inc+=0.02
   }else if(puest=="ANALISTA"){
     inc+=0
   }else if(puest=="PROGRAMADOR"){
