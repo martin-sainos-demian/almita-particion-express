@@ -29,7 +29,7 @@ const part = function(name, desp, puest, age, net){
   var retencion=0
 
   var name_regex=/^[a-zA-Zñ\s]{4,255}$/
-  var desp_regex=/^(AB)\d\d\d{4,4}$/
+  var desp_regex=/^[AB]\d\d\d{4,4}$/
   var puest_regex=/^(JEFE_AREA)|(DIRECTOR_GENERAL)|(JEFE_PROYECTO)|(ANALISTA)|(PROGRAMADOR)&/
   var sal = parseFloat(net)
 
@@ -37,9 +37,9 @@ const part = function(name, desp, puest, age, net){
     if(name_regex.test(name)){
       if(desp_regex.test(desp)){
         if(puest_regex.test(puest)){
-          if(1000<sal&&sal<6000){
-            if(18<sal&&sal<67){
-              retencion=sal
+          if(1000<=sal&&sal<=6000){
+            if(18<=sal&&sal<=67){
+              retencion=ret(sal)
             }else{
               error="MAL_EDAD"
             }
@@ -59,6 +59,16 @@ const part = function(name, desp, puest, age, net){
 
   return {error:error,
     retencion:retencion}
+}
+
+const ret=function(sal){
+  var res=sal
+  if(1000<=sal&&sal<=2000){
+    res=res*0.08
+  }else if(2000<=sal&&sal<=3000){
+    res=res*0.095
+  }
+  return res
 }
 
 app.get("/particion", async (req, res, next) => {
