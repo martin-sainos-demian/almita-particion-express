@@ -38,8 +38,9 @@ const part = function(name, desp, puest, age, net){
       if(desp_regex.test(desp)){
         if(puest_regex.test(puest)){
           if(1000<=sal&&sal<=6000){
-            if(18<=sal&&sal<=67){
+            if(18<=age&&age<=67){
               retencion=ret(sal, puest, age)
+              error="1"
             }else{
               error="MAL_EDAD"
             }
