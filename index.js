@@ -39,7 +39,7 @@ const part = function(name, desp, puest, age, net){
         if(puest_regex.test(puest)){
           if(1000<=sal&&sal<=6000){
             if(18<=sal&&sal<=67){
-              retencion=ret(sal)
+              retencion=ret(sal, puest, age)
             }else{
               error="MAL_EDAD"
             }
@@ -61,13 +61,33 @@ const part = function(name, desp, puest, age, net){
     retencion:retencion}
 }
 
-const ret=function(sal){
+const ret=function(sal, puest, age){
   var res=sal
+  var inc=1
   if(1000<=sal&&sal<=2000){
-    res=res*0.08
-  }else if(2000<=sal&&sal<=3000){
-    res=res*0.095
+    inc=0.08
+  }else if(2000<sal&&sal<=3000){
+    inc=0.095
+  }else if(3000<sal&&sal<=4000){
+    inc=0.11
+  }else if(4000<sal&&sal<=5000){
+    inc=0.125
+  }else if(5000<sal&&sal<=6000){
+    inc=0.14
   }
+
+  if(puest=="JEFE_AREA"){
+    inc+=3.5
+  }else if(puest=="DIRECTOR_GENERAL"){
+    inc+=3
+  }else if(puest=="JEFE_PROYECTO"&&age>20){
+    inc+=2
+  }else if(puest=="ANALISTA"){
+    inc+=0
+  }else if(puest=="PROGRAMADOR"){
+    inc+=0
+  }
+  res=res*inc
   return res
 }
 
